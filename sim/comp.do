@@ -1,8 +1,9 @@
 
 # Compile vhdl file
 proc comp {filename} {
-  set UVM_PATH C:/modeltech64_2020.4/verilog_src/uvm-1.2/src
-  set PROJECT_PATH C:/intelFPGA_pro/21.1/espi
+  set UVM_PATH $::env(V_UVM_PATH)
+  set PROJECT_PATH $::env(V_PROJECT_PATH)
+  echo "The project path is: $PROJECT_PATH"
   if {[file exists ${PROJECT_PATH}/${filename}]} {
     set ext [file extension ${PROJECT_PATH}/${filename}]
     puts "## Compiling $filename"
